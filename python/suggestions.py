@@ -1,14 +1,17 @@
 # n by 7 matrix
 suggestions = [
-    ['Reusable water bottle', '10', '5', 'n/a', 'n/a', 'Reusable water bottels can save you from wasting plastic ones', "guessed(we're working on calculating it)"],
-    ['Walk or bike', '15', '10', 'n/a', 'n/a', "Walking and biking can help reduce carbon emissions because you won't have to use a car", "guessed(we're working on calculating it)"],
-    ['Turn of lights', '2', '1', 'n/a', 'n/a', 'Saves electricity', "guessed(we're working on calculating it)"],
-    ['Keep your tires inflated', '10', "0(you' have to do it anyways)", 'n/a', 'n/a', "This increases your car's efficiency", "guessed(we're working on calculating it)"],
-    ['Eat more vegetables and fruits', '40', '10', 'n/a', 'n/a', "This is actually one of the best things you can do and it's healthy for you!", "guessed(we're working on calculating it)"],
+    ['Reusable water bottle', '10', '5', 'n/a', '0', 'Reusable water bottels can save you from wasting plastic ones', "guessed(we're working on calculating it)"],
+    ['Walk or bike', '15', '10', 'n/a', '0', "Walking and biking can help reduce carbon emissions because you won't have to use a car", "guessed(we're working on calculating it)"],
+    ['Turn of lights', '2', '1', 'n/a', '0', 'Saves electricity', "guessed(we're working on calculating it)"],
+    ['Keep your tires inflated', '10', "0(you' have to do it anyways)", 'n/a', '0', "This increases your car's efficiency", "guessed(we're working on calculating it)"],
+    ['Eat more vegetables and fruits', '40', '10', 'n/a', '551', "This is actually one of the best things you can do and it's healthy for you!", "According to the University of Colorado Boulder"],
     ['Better laundry practices', '30', '10', 'n/a', 'n/a', "Use the cold water cycle for washing cloths and do all of your laundry at once. It's even better if you don't use a dryer", "guessed(we're working on calculating it)"],
-    ['Turn off AC and heater when not at home', '20', '-5', 'n/a', 'n/a', 'saves money and helps the climate!', "guessed(we're working on calculating it)"], ['RRR', '15', '2', 'n/a', 'n/a', "This one's a classic, it's good old reduce, reuse, recycle!", "guessed(we're working on calculating it)"],
-    ['Use public transportation', '30', '30', 'n/a', 'n/a', 'Public transport is very nice', "guessed(we're working on calculating it)"], ['Buy an electric car', '80', '100', 'n/a', 'n/a', "This is very expensive but it's also very helpful", "guessed(we're working on calculating it)"],
-    ['Change your energy provider to a reusable energy provider', '80', '50', 'n/a', 'n/a', 'The expensiveness of this varies depending on what you switch to', "guessed(we're working on calculating it)"]
+    ['Turn off AC and heater when not at home', '20', '-5', 'n/a', '0', 'Saves money and helps the climate!', "guessed(we're working on calculating it)"],
+    ['RRR', '15', '2', 'n/a', '0', "This one's a classic, it's good old reduce, reuse, recycle!", "guessed(we're working on calculating it)"],
+    ['Use public transportation', '30', '30', 'n/a', '0', 'Public transport is very nice', "guessed(we're working on calculating it)"],
+    ['Buy an electric car', '80', '100', '2.3', '0', "This is very expensive but it's also very helpful", "guessed(we're working on calculating it)"],
+    ['Change your energy provider to a reusable energy provider', '80', '50', 'n/a', '0', 'The expensiveness of this varies depending on what you switch to', "guessed(we're working on calculating it)"],
+    ["More efficient light bulbs","10","5","n/a","0","Some light bulbs can be 75% more efficient than incandescent light bulbs", "guessed(we're working on calculating it)"]
 ]
 
 # generates a html table from the list suggestions
@@ -41,4 +44,3 @@ def generate_list():
 input1 = input()
 if input1 == "1": generate_list()
 else: generate_table()
-
