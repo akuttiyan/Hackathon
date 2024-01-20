@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestions</title>
+    <link rel="stylesheet" href="style.css">
+    <div class="header">
+        <a href="">Home</a>
+        <a href="">Learn more</a>
+    </div>
+</head>
+<body id="body">
+    <h1>Suggestions</h1>
+    <div class="dropdown">
+        <button class="dropbtn" style="left: 80%">Sort</button>
+        <div class="dropdown-content">
+            <button type="button" onclick="sortTable(0, false)">Sort alphabetically</button>
+            <button type="button" onclick="sortTable(0, true)">Sort reverse alphabetically</button>
+            <button type="button" onclick="sortTable(1, true)">Sort by most impact</button>
+            <button type="button" onclick="sortTable(1, false)">Sort by least impact</button>
+            <button type="button" onclick="sortTable(2, false)">Sort by least cost</button>
+            <button type="button" onclick="sortTable(2, true)">Sort by most cost</button>
+        </div>
+    </div>
+    <table id="The table">
+        <thead>
+        <tr><th>Name</th><th>Impact(Ranked out of 100)</th><th>Cost(Ranked out of 100)</th><th>Description</th></tr>
+        </thead>
+        <tbody>
+        <tr><td>Reusable water bottle</td><td>10</td><td>5</td><td>Reusable water bottels can save you from wasting plastic ones</td></tr>
+        <tr><td>Walk or bike</td><td>15</td><td>10</td><td>Walking and biking can help reduce carbon emissions because you won't have to use a car</td></tr>
+        <tr><td>Turn of lights</td><td>2</td><td>1</td><td>Saves electricity</td></tr>
+        <tr><td>Keep your tires inflated</td><td>10</td><td>0(you' have to do it anyways)</td><td>This increases 
+        your car's efficiency</td></tr>
+        <tr><td>Eat more vegetables and fruits</td><td>40</td><td>10</td><td>This is actually one of the best things you can do and it's healthy for you!</td></tr>
+        <tr><td>Better laundry practices</td><td>30</td><td>10</td><td>Use the cold water cycle for washing cloths and do all of your laundry at once. It's even better if you don't use a dryer</td></tr>
+        <tr><td>Turn off AC and heater when not at home</td><td>20</td><td>-5</td><td>saves money and helps the climate!</td></tr>
+        </tbody>
+        </table>
+    <script>
+        function sortTable(key, reverse1) {
+            const NUMBERCOLS = [1, 2];
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("The table");
+            switching = true;
+            /*Make a loop that will continue until
+            no switching has been done:*/
+            while (switching) {
+                //start by saying: no switching is done:
+                switching = false;
+                rows = table.rows;
+                /*Loop through all table rows (except the
+                first, which contains table headers):*/
+                for (i = 1; i < (rows.length - 1); i++) {
+                    //start by saying there should be no switching:
+                    shouldSwitch = false;
+                    /*Get the two elements you want to compare,
+                    one from current row and one from the next:*/
+                    x = rows[i].getElementsByTagName("TD")[key].innerText;
+                    y = rows[i + 1].getElementsByTagName("TD")[key].innerText;
+                    //check if the two rows should switch place:
+                    if (NUMBERCOLS.includes(key)) {
+                        x = parseInt(x);
+                        y = parseInt(y);
+                        if ((x > y && !reverse1) || (x < y && reverse1)) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                    else {
+                        if ((x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase() && !reverse1) || (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase() && reverse1)) {
+                            //if so, mark as a switch and break the loop:
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+            }
+            if (shouldSwitch) {
+                /*If a switch has been marked, make the switch
+                and mark that a switch has been done:*/
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+          }
+        }
+    </script>
+</body>
+</html>
